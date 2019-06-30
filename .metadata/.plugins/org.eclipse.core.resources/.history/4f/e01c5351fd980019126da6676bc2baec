@@ -1,0 +1,10 @@
+package miller.reanna.randomexample;
+
+public class RandomTester {
+
+	public static void main(String[] args) {
+		new RandomAccessFileExample().writeToFile("Hello fuckers", 4);
+
+	}
+
+}

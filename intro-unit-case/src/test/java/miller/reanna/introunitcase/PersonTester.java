@@ -1,0 +1,75 @@
+package miller.reanna.introunitcase;
+
+import java.time.LocalDate;
+
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class PersonTester {
+	
+	private static Person p;
+	
+	@BeforeClass
+	private static void init() {
+		p = new Person();
+	}
+	
+
+
+	@Test
+	public void testSetBDayCorrectDaysAge() {
+		Person p = new Person();
+		p.setBirthDate(LocalDate.of(2016, 2, 28));
+		
+		int age = p.getAgeInDays();
+		int ex = (365 * 3) +91 +26 +2;
+		Assert.assertEquals("Expected " + ex, ex, age);
+	}
+	
+	
+	@Test
+	public void testSetNameValid() {
+		Person p = new Person();
+		p.setName("Fucker");
+		Assert.assertEquals("name is not equal", "Fucker", p.getName());
+		p.getName().equals("Fucker");
+	}
+	
+	@Test
+	public void testSetNameInvalid() {
+		Person p = new Person();
+		try {
+			p.setName(null);
+		}
+		catch(IllegalArgumentException ex) {
+			//nothin
+		}catch(Exception ex) {
+			Assert.assertFalse("Found unexpected exception " + ex, true);
+		}
+	}
+	
+	@Test
+	public void testSetNameEmpty() {
+		Person p = new Person();
+		p.setName("");
+		Assert.assertEquals("name cannot be empty", "Fucker", p.getName());
+		p.getName().equals("Fucker");
+	}
+	
+	@Test
+	public void testSetNameWhiteSpace() {
+		Person p = new Person();
+		p.setName("   ");
+		Assert.assertEquals("name cannot be only whitespace", "Fucker", p.getName());
+		p.getName().equals("Fucker");
+	}
+	
+	@Test
+	public void testSetNameLong() {
+		Person p = new Person();
+		p.setName("Fucker");
+		Assert.assertEquals("name is too long", "Fucker", p.getName());
+		p.getName().equals("Fucker");
+	}
+}

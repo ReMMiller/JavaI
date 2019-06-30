@@ -1,0 +1,13 @@
+package miller.reanna.randomexample;
+
+import java.io.IOException;
+
+public class RandomTester {
+
+	public static void main(String[] args) throws IOException {
+		//new RandomAccessFileExample().writeToFile("Hello fuckers", 4);
+		new RandomAccessFileExample().writeToFile(256, 4);
+
+	}
+
+}

@@ -1,0 +1,52 @@
+package miller.reanna.introunitcase;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class PersonTester {
+
+	@Test
+	public void testSetNameValid() {
+		Person p = new Person();
+		p.setName("Fucker");
+		Assert.assertEquals("name is not equal", "Fucker", p.getName());
+		p.getName().equals("Fucker");
+	}
+	
+	@Test
+	public void testSetNameInvalid() {
+		Person p = new Person();
+		try {
+			p.setName(null);
+		}
+		catch(IllegalArgumentException ex) {
+			//nothin
+		}catch(Exception ex) {
+			Assert.assertFalse("Found unexpected exception " + ex, true);
+		}
+	}
+	
+	@Test
+	public void testSetNameEmpty() {
+		Person p = new Person();
+		p.setName("");
+		Assert.assertEquals("name is not equal", "Fucker", p.getName());
+		p.getName().equals("Fucker");
+	}
+	
+	@Test
+	public void testSetNameWhiteSpace() {
+		Person p = new Person();
+		p.setName("   ");
+		Assert.assertEquals("name is not equal", "Fucker", p.getName());
+		p.getName().equals("Fucker");
+	}
+	
+	@Test
+	public void testSetNameNumbers() {
+		Person p = new Person();
+		p.setName("123");
+		Assert.assertEquals("name is not equal", "Fucker", p.getName());
+		p.getName().equals("Fucker");
+	}
+}

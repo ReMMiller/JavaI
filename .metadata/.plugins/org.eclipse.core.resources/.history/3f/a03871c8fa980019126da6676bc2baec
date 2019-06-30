@@ -1,0 +1,8 @@
+package miller.reanna.randomexample;
+
+public class RandomAccessFileExample {
+
+	public void writeToFile(String msg, int index) {
+		
+	}
+}

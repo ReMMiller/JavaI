@@ -1,0 +1,16 @@
+package miller.reanna.randomexample;
+
+import java.io.RandomAccessFile;
+
+public class RandomAccessFileExample {
+
+	private RandomAccessFile file = null;
+	
+	public void writeToFile(String msg, int index) {
+		initFile();
+	}
+	
+	private void initFile() {
+		
+	}
+}

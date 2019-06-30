@@ -1,0 +1,30 @@
+package miller.reanna.introunitcase;
+
+import java.time.LocalDate;
+
+public class Person {
+
+	private String name;
+	private  LocalDate birthDate;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		if(name == null || name.trim().length() < 1) {
+			throw new IllegalArgumentException("Name cannot be null/empty");
+		}
+		this.name = name;
+	}
+	public LocalDate getBirthDate() {
+		return birthDate;
+	}
+	public void setBirthDate(LocalDate birthDate) {
+		if(birthDate == null) {
+			throw new IllegalArgumentException("Birthdate cannot be null");
+		}
+		this.birthDate = birthDate;
+	}
+	
+	
+}

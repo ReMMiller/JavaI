@@ -1,0 +1,10 @@
+package miller.reanna.randomexample;
+
+public class RandomTester {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

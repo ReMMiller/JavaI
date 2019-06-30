@@ -1,0 +1,9 @@
+package miller.reanna.introunitcase;
+
+public class PersonTester {
+
+	public void testSetNameValid() {
+		Person p = new Person();
+		p.setName("Fucker");
+	}
+}

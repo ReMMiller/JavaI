@@ -1,0 +1,20 @@
+package miller.reanna.randomexample;
+
+import java.io.FileNotFoundException;
+import java.io.RandomAccessFile;
+
+public class RandomAccessFileExample {
+
+	private RandomAccessFile file = null;
+	
+	public void writeToFile(String msg, int index) throws FileNotFoundException {
+		initFile();
+	}
+	
+	private void initFile() throws FileNotFoundException {
+		if(file == null) {
+			file = new RandomAccessFile("random.rmm", "rw");
+			//my initials as file type
+		}
+	}
+}

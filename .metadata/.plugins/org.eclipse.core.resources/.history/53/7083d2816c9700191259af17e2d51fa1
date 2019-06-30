@@ -1,0 +1,13 @@
+package miller.reanna.introunitcase;
+
+import org.junit.Assert;
+
+public class PersonTester {
+
+	public void testSetNameValid() {
+		Person p = new Person();
+		p.setName("Fucker");
+		Assert.assertEquals("name is not equal", "Fucker", p.getName());
+		p.getName().equals("Fucker");
+	}
+}

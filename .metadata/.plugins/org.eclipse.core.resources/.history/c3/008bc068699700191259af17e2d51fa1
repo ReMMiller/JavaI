@@ -1,0 +1,39 @@
+package miller.reanna.introunitcase;
+
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalUnit;
+
+public class Person {
+
+	private String name;
+	private  LocalDate birthDate;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		if(name == null || name.trim().length() < 1) {
+			throw new IllegalArgumentException("Name cannot be null/empty");
+		}
+		this.name = name;
+	}
+	public LocalDate getBirthDate() {
+		return birthDate;
+	}
+	public void setBirthDate(LocalDate birthDate) {
+		if(birthDate == null) {
+			throw new IllegalArgumentException("Birthdate cannot be null");
+		}
+		this.birthDate = birthDate;
+	}
+	
+	/////
+	public int getAgeInSec() {
+		LocalDate today = LocalDate.now();
+		long numDaysToday = today.toEpochDay();
+		long numDaysBDay = this.getBirthDate().toEpochDay();
+		return (int)(numDaysToday - numDaysBDay);
+	}
+	
+}
